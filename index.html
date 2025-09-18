@@ -1,119 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Primavera 🌸</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #ffecd2, #fcb69f);
-            font-family: 'Pacifico', cursive;
-            text-align: center;
-            overflow: hidden;
-        }
-        h1 {
-            font-size: 3em;
-            color: #ff4d6d;
-            margin-top: 50px;
-        }
-        p {
-            font-size: 1.5em;
-            color: #333;
-        }
-        .heart {
-            color: red;
-            font-size: 2em;
-            cursor: pointer;
-            animation: beat 1s infinite;
-        }
-        @keyframes beat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-        }
-        .flower {
-            width: 100px;
-            margin: 20px auto;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        .flower:hover {
-            transform: scale(1.2) rotate(10deg);
-        }
-        .message-carousel {
-            margin-top: 40px;
-            font-size: 1.5em;
-            color: #ff3366;
-            min-height: 50px;
-        }
-        audio {
-            display: none;
-        }
-        .confetti {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            pointer-events: none;
-            background-size: cover;
-            animation: fall linear infinite;
-        }
-        @keyframes fall {
-            0% { transform: translateY(-50px) rotate(0deg); opacity:1; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity:0; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Feliz Primavera 💐</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #fff8dc, #fdf6e3);
+      color: #333;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 3em;
+      color: #d6336c;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.5em;
+      margin-bottom: 40px;
+    }
+    .corazon {
+      font-size: 5em;
+      animation: latido 1s infinite;
+      margin-bottom: 30px;
+    }
+    @keyframes latido {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+    .flores {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .flor {
+      font-size: 3em;
+      animation: girar 6s infinite linear;
+    }
+    @keyframes girar {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 1.2em;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
+  <h1>🌸 Feliz Día de la Primavera 🌸</h1>
+  <p>Para ti, mi amor, que llenas mis días de alegría 💕</p>
 
-    <h1>¡Feliz Primavera, mi amor! 🌸</h1>
-    <p>Por favor, no crezcas más 😏 <span class="heart">❤️</span></p>
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="flower" alt="Flor">
-    
-    <div class="message-carousel"></div>
+  <div class="corazon">❤️</div>
 
-    <!-- Música de fondo -->
-    <audio autoplay loop>
-        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
-    </audio>
+  <div class="flores">
+    <div class="flor">🌼</div>
+    <div class="flor">🌻</div>
+    <div class="flor">🌼</div>
+    <div class="flor">🌻</div>
+  </div>
 
-    <script>
-        const messages = [
-            "Eres mi flor más bonita 🌷",
-            "Cada día contigo es primavera 🌸",
-            "Te adoro más de lo que imaginas 💖",
-            "Gracias por hacer mi vida más dulce 🍬",
-            "Que tu sonrisa nunca se apague 😍"
-        ];
-        let index = 0;
-        const carousel = document.querySelector('.message-carousel');
-        function showMessage() {
-            carousel.textContent = messages[index];
-            index = (index + 1) % messages.length;
-        }
-        showMessage();
-        setInterval(showMessage, 4000);
-
-        document.querySelector('.heart').addEventListener('click', function() {
-            alert("¡Te quiero muchísimo! 💞🌸");
-        });
-
-        document.querySelector('.flower').addEventListener('click', function() {
-            alert("Eres la flor que alegra mi vida 🌹");
-        });
-
-        function createConfetti() {
-            const confetti = document.createElement('div');
-            confetti.classList.add('confetti');
-            confetti.style.left = Math.random() * window.innerWidth + 'px';
-            confetti.style.backgroundImage = 'url(https://cdn-icons-png.flaticon.com/512/616/616408.png)';
-            confetti.style.animationDuration = (3 + Math.random() * 3) + 's';
-            document.body.appendChild(confetti);
-            setTimeout(() => confetti.remove(), 6000);
-        }
-        setInterval(createConfetti, 300);
-    </script>
-
+  <footer>
+    🌞 Que esta primavera sea tan radiante como tu sonrisa 💛
+  </footer>
 </body>
 </html>
